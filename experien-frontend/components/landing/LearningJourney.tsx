@@ -2,7 +2,7 @@ const steps = ["Select an industry", "Choose a course", "Enrol and pay", "Start 
 
 export default function LearningJourney() {
   return (
-    <section className="bg-lime/20">
+    <section className="[bg-#FBFCFA]">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="text-xl font-extrabold">Your learning journey</h2>
         <ol className="mt-6 grid gap-4 text-sm font-medium md:grid-cols-4">

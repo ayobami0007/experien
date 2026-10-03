@@ -7,8 +7,8 @@ const items = [
 
 export default function Features() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-16">
+      
         <h2 className="text-2xl font-extrabold">Everything you need to move through a course</h2>
         <p className="mt-1 text-sm text-muted">After successful payment, your enrolled course opens in a simple module-based learning environment.</p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -20,7 +20,7 @@ export default function Features() {
             </div>
           ))}
         </div>
-      </div>
+
     </section>
   );
 }

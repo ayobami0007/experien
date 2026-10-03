@@ -12,7 +12,7 @@ const faqs = [
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="text-2xl font-extrabold">Good to know before you enrol</h2>
       <div className="mt-6 space-y-3">
         {faqs.map(([q, a], i) => (
