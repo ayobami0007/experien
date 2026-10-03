@@ -1,13 +1,23 @@
-import Button from "@/components/ui/Button";
+import Hero from "@/components/landing/Hero";
+import IndustryCards from "@/components/landing/IndustryCards";
+import LearningJourney from "@/components/landing/LearningJourney";
+import CourseTabs from "@/components/landing/CourseTabs";
+import Features from "@/components/landing/Features";
+import EnrolSteps from "@/components/landing/EnrolSteps";
+import Faq from "@/components/landing/Faq";
+import CtaBanner from "@/components/landing/CtaBanner";
 
 export default function Home() {
   return (
-    <section className="py-12 text-center">
-      <h1 className="text-4xl font-bold">Project management training for <span className="text-brand">your industry</span></h1>
-      <p className="mx-auto mt-4 max-w-xl text-gray-600">
-        Pick your industry, choose a course, pay, and start learning, all in one place.
-      </p>
-      <div className="mt-6"><Button href="/industries">Browse industries</Button></div>
-    </section>
+    <>
+      <Hero />
+      <IndustryCards />
+      <LearningJourney />
+      <CourseTabs />
+      <Features />
+      <EnrolSteps />
+      <Faq />
+      <CtaBanner />
+    </>
   );
 }
