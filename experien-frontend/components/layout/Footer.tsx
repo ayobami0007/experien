@@ -4,11 +4,15 @@ const col = "space-y-2 text-sm text-white/80";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-[2fr_1fr_1fr]">
+    <footer className="bg-ink  ">
+      <div className="bg-ink text-white mx-auto max-w-[1400px]  px-6 md:px-16 md:px-16 py-12 ">
+      <div className="grid gap-8  md:grid-cols-[2fr_1fr_1fr]">
         <div>
-          <p className="text-2xl font-extrabold">experien</p>
-          <p className="mt-2 max-w-xs text-sm text-white/70">Industry-focused project management training.</p>
+         <Link href="/"  className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+          <span className="text-4xl md:text-5xl">E</span>xperien
+        </Link>
+
+          <p className=" max-w-xs text-xs text-white/70">Industry-focused project management training.</p>
         </div>
         <ul className={col}>
           <li className="font-semibold text-white">Explore</li>
@@ -24,8 +28,11 @@ export default function Footer() {
           <li>Quizzes and progress</li>
         </ul>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
-        © {new Date().getFullYear()} Experien · PNA 5
+      <div className="mt-8 border-t border-white/40 py-4 text-center text-xs text-white/60 flex justify-between">
+        <p>Experien</p>
+          <p> Industry-focused Learning</p>
+
+      </div>
       </div>
     </footer>
   );
