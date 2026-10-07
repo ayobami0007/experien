@@ -8,9 +8,12 @@ export default function Footer() {
       <div className="bg-ink text-white mx-auto max-w-[1400px]  px-6 md:px-16 md:px-16 py-12 ">
       <div className="grid gap-8  md:grid-cols-[2fr_1fr_1fr]">
         <div>
-         <Link href="/"  className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-          <span className="text-4xl md:text-5xl">E</span>xperien
-        </Link>
+      
+
+           {/* Logo */}
+  <Link href="/" className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+  <img src="/logo2.png" alt="Experien" className="h-9 w-auto md:h-11" />
+</Link>
 
           <p className=" max-w-xs text-xs text-white/70">Industry-focused project management training.</p>
         </div>

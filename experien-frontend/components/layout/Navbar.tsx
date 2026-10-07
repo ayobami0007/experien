@@ -18,9 +18,9 @@ export default function Navbar() {
     <header className="border-b border-line bg-white">
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:grid md:grid-cols-[1fr_auto_1fr] md:px-16">
         {/* Logo */}
-  <Link href="/" onClick={close} className="flex items-center">
-  <img src="/image.png" alt="Experien" className="h-9 w-auto md:h-11" />
-</Link>
+        <Link href="/" onClick={close} className="flex items-center">
+          <img src="/logo.png" alt="Experien" className="h-9 w-auto md:h-11" />
+        </Link>
 
 
         {/* Desktop links (centre) */}
