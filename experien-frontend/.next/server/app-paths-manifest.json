@@ -1,6 +1,6 @@
 {
-  "/(auth)/register/page": "app/(auth)/register/page.js",
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/industries/page": "app/industries/page.js",
-  "/courses/[slug]/page": "app/courses/[slug]/page.js"
+  "/industries/[industry]/page": "app/industries/[industry]/page.js",
+  "/page": "app/page.js"
 }

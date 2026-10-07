@@ -1,19 +1,22 @@
 import { notFound } from "next/navigation";
-import CourseCard from "@/components/course/CourseCard";
-import { getCoursesByIndustry, getIndustry } from "@/lib/mock-data";
+import { pathways } from "@/components/industries/pathways";
+import CourseHero from "@/components/industry-courses/CourseHero";
+import CourseDiscovery from "@/components/industry-courses/CourseDiscovery";
+import CoursePreview from "@/components/industry-courses/CoursePreview";
+import CourseExpect from "@/components/industry-courses/CourseExpect";
+import CourseCta from "@/components/industry-courses/CourseCta";
 
 export default function IndustryCoursesPage({ params }: { params: { industry: string } }) {
-  const industry = getIndustry(params.industry);
-  if (!industry) notFound();
-  const courses = getCoursesByIndustry(industry.id);
+  const selected = pathways.find((p) => p.id === params.industry);
+  if (!selected) notFound();
 
   return (
     <>
-      <h1 className="text-2xl font-bold">{industry.name}</h1>
-      <p className="mb-6 text-gray-600">{industry.subIndustry}</p>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {courses.map((c) => <CourseCard key={c.id} course={c} />)}
-      </div>
+      <CourseHero selected={selected} />
+      <CourseDiscovery selected={selected} />
+      <CoursePreview selected={selected} />
+      <CourseExpect selected={selected} />
+      <CourseCta selected={selected} />
     </>
   );
 }

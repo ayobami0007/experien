@@ -1,13 +1,24 @@
-import IndustryCard from "@/components/industry/IndustryCard";
-import { industries } from "@/lib/mock-data";
+"use client";
+
+import { useState } from "react";
+import { pathways } from "@/components/industries/pathways";
+import IndustriesHero from "@/components/industries/IndustriesHero";
+import IndustryPicker from "@/components/industries/IndustryPicker";
+import SelectionSummary from "@/components/industries/SelectionSummary";
+import MaterialsSection from "@/components/industries/MaterialsSection";
+import CourseBanner from "@/components/industries/CourseBanner";
 
 export default function IndustriesPage() {
+  const [selectedId, setSelectedId] = useState("technology");
+  const selected = pathways.find((p) => p.id === selectedId)!;
+
   return (
     <>
-      <h1 className="mb-6 text-2xl font-bold">Select your industry</h1>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {industries.map((i) => <IndustryCard key={i.id} industry={i} />)}
-      </div>
+      <IndustriesHero />
+      <IndustryPicker pathways={pathways} selectedId={selectedId} onSelect={setSelectedId} />
+      <SelectionSummary selected={selected} />
+      <MaterialsSection selected={selected} />
+      <CourseBanner selected={selected} />
     </>
   );
 }
