@@ -1,8 +1,9 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/industries/page": "app/industries/page.js",
-  "/courses/[slug]/page": "app/courses/[slug]/page.js",
   "/courses/[slug]/curriculum/page": "app/courses/[slug]/curriculum/page.js",
   "/checkout/[slug]/page": "app/checkout/[slug]/page.js",
-  "/checkout/success/page": "app/checkout/success/page.js"
+  "/checkout/success/page": "app/checkout/success/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/learn/[course]/page": "app/learn/[course]/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(auth)/register/page": "app/(auth)/register/page.js"
 }
