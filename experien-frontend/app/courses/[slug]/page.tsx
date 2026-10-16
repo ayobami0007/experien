@@ -1,39 +1,32 @@
 import { notFound } from "next/navigation";
-import Button from "@/components/ui/Button";
-import Curriculum from "@/components/course/Curriculum";
-import { getCourse, getIndustry } from "@/lib/mock-data";
-import { formatPrice } from "@/lib/utils/format";
+import type { Metadata } from "next";
+import { getCourseBySlug } from "@/lib/mock/Courses";
+import CourseHero from "@/components/course/CourseHero";
+import CourseOverview from "@/components/course/Courseoverview";
+import CurriculumPreview from "@/components/course/Curriculumpreview";
+import EnrolInfo from "@/components/course/Enrolinfo";
+import EnrolCta from "@/components/course/Enrolcta";
 
-export default function CourseDetailsPage({ params }: { params: { slug: string } }) {
-  const course = getCourse(params.slug);
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
+  return { title: course ? `${course.title} | Experien` : "Course not found" };
+}
+
+export default async function CourseDetailsPage({ params }: Props) {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
   if (!course) notFound();
-  const industry = getIndustry(course.industryId);
 
   return (
-    <div className="space-y-6">
-      <div>
-        <p className="text-sm text-brand">{industry?.name}</p>
-        <h1 className="text-3xl font-bold">{course.title}</h1>
-        <p className="mt-2 text-gray-600">{course.overview}</p>
-      </div>
-
-      <section>
-        <h2 className="mb-2 text-lg font-semibold">Objectives</h2>
-        <ul className="list-disc pl-5 text-sm">{course.objectives.map((o) => <li key={o}>{o}</li>)}</ul>
-      </section>
-
-      <section>
-        <h2 className="mb-2 text-lg font-semibold">Curriculum</h2>
-        <Curriculum modules={course.modules} />
-      </section>
-
-      <section className="text-sm">
-        <p><strong>Duration:</strong> {course.duration}</p>
-        <p><strong>Requirements:</strong> {course.requirements.join(", ")}</p>
-        <p><strong>Price:</strong> {formatPrice(course.price)}</p>
-      </section>
-
-      <Button href={`/checkout/${course.slug}`}>Enrol now</Button>
-    </div>
+    <main>
+      <CourseHero course={course} />
+      <CourseOverview course={course} />
+      <CurriculumPreview modules={course.modules} slug={course.slug} />
+      <EnrolInfo requirements={course.requirements} />
+      <EnrolCta title={course.title} slug={course.slug} />
+    </main>
   );
 }
