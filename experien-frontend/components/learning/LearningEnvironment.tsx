@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 import {
   flattenLessons,
   isModuleDone,

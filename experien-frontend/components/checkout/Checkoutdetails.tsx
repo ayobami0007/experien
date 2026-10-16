@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 
 type Errors = Partial<Record<"fullName" | "email" | "country", string>>;
 

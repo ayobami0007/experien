@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Course, ModuleContent } from "@/types/course";
+import type { Course, ModuleContent } from "@/types/Course";
 import { type LessonRef, lessonDetail, lessonType, pad } from "@/lib/utils/learning";
 
 type Props = {

@@ -1,4 +1,4 @@
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 
 export default function CurriculumHero({ course }: { course: Course }) {
   const lessons = course.modules.reduce((n, m) => n + m.lessons, 0);

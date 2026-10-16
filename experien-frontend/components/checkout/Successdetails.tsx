@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 
 const naira = (n: number) => `₦${n.toLocaleString("en-NG")}`;
 

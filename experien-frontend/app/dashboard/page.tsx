@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getCourseBySlug } from "@/lib/mock/Courses";
+import type { CourseModule } from "@/types/Course";
 import { enrolments, learner } from "@/lib/mock/learner";
 import {
   completedModuleCount,
@@ -47,7 +48,9 @@ export default function DashboardPage() {
 
   const scores = Object.entries(enrolment.quizScores);
   const latest = scores[scores.length - 1];
-  const latestModule = latest ? course.modules.findIndex((m) => m.id === latest[0]) : -1;
+  const latestModule = latest
+  ? course.modules.findIndex((m: CourseModule) => m.id === latest[0])
+  : -1;
 
   const stats: Stat[] = [
     { label: "Active courses", value: String(enrolments.length), sub: course.title },

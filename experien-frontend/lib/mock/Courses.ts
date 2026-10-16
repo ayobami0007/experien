@@ -1,4 +1,4 @@
-import type { Course, CourseModule, ModuleContent } from "@/types/course";
+import type { Course, CourseModule, ModuleContent } from "@/types/Course";
 
 // Builds a module from its lesson list (lesson count and items come from `contents`)
 const makeModule = (

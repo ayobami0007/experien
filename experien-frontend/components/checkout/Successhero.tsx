@@ -1,4 +1,4 @@
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 
 export default function SuccessHero({ course, paymentRef }: { course: Course; paymentRef: string }) {
   const chips = ["✓ Payment confirmed", "Access active", `Reference · ${paymentRef}`];

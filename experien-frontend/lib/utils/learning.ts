@@ -1,4 +1,4 @@
-import type { Course, ModuleContent } from "@/types/course";
+import type { Course, ModuleContent } from "@/types/Course";
 
 export type LessonRef = {
   id: string;

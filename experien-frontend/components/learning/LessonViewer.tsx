@@ -1,4 +1,4 @@
-import type { CourseModule } from "@/types/course";
+import type { CourseModule } from "@/types/Course";
 import { type LessonRef, labelsFor, lessonDetail, lessonType, pad } from "@/lib/utils/learning";
 
 type Props = {

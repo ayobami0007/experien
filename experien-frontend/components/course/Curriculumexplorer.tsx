@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { Course } from "@/types/course";
+import type { Course } from "@/types/Course";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 

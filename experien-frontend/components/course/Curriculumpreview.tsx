@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { CourseModule } from "@/types/course";
+import type { CourseModule } from "@/types/Course";
 
 export default function CurriculumPreview({ modules, slug }: { modules: CourseModule[]; slug: string }) {
   const [open, setOpen] = useState<Set<number>>(new Set([0]));
